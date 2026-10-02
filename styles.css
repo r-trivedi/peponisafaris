@@ -110,3 +110,28 @@ section { padding: clamp(2.5rem, 7vw, 5rem) clamp(1rem, 4vw, 3rem); }
   .js .reveal { transform: none; transition: opacity .6s ease; }
   .bar, .logo { transition: none; }
 }
+
+/* Hover zoom on host and staff photos */
+.host-grid img,
+.staff img {
+  position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+@media (hover: hover) {
+  .host-grid img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    z-index: 1;
+  }
+  .staff img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    z-index: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .host-grid img,
+  .staff img { transition: none; }
+}
